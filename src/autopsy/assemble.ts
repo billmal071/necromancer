@@ -1,5 +1,6 @@
 import { writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
+import { redactOutput } from './redact.js';
 import type {
   AutopsyReport,
   DependencyIssue,
@@ -31,6 +32,14 @@ function computeStatus(
   return 'green';
 }
 
+function redactStep(step: StepResult): StepResult {
+  return {
+    ...step,
+    stdout: redactOutput(step.stdout),
+    stderr: redactOutput(step.stderr),
+  };
+}
+
 /** Combine all step results into an AutopsyReport and write autopsy.json. */
 export async function assembleReport(
   input: AssembleInput,
@@ -43,9 +52,9 @@ export async function assembleReport(
     clonedAt: input.clonedAt,
     nodeVersion,
     packageManager: input.packageManager,
-    install: input.install,
-    build: input.build,
-    test: input.test,
+    install: redactStep(input.install),
+    build: redactStep(input.build),
+    test: input.test != null ? redactStep(input.test) : undefined,
     dependencyIssues: input.dependencyIssues,
     lastCommit: input.lastCommit,
     repoAgeMonths: input.repoAgeMonths,
