@@ -1,0 +1,9 @@
+{
+  "name": "minimal-node-app",
+  "version": "1.0.0",
+  "description": "A minimal valid Node.js fixture",
+  "scripts": {
+    "build": "echo build-ok"
+  },
+  "dependencies": {}
+}

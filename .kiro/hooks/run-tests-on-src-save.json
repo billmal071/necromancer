@@ -1,0 +1,13 @@
+{
+  "name": "necromancer",
+  "description": "Necromancer dev agent – runs tests after every src file save.",
+  "hooks": {
+    "postToolUse": [
+      {
+        "matcher": "write",
+        "command": "bash -c 'INPUT=$(cat); PATH_VAL=$(echo \"$INPUT\" | python3 -c \"import json,sys; d=json.load(sys.stdin); print(d.get(\\\"tool_input\\\",{}).get(\\\"path\\\",\\\"\\\"))\"); if echo \"$PATH_VAL\" | grep -q \"/src/\"; then npm test; fi'",
+        "timeout_ms": 60000
+      }
+    ]
+  }
+}

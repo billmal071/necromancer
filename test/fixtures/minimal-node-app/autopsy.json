@@ -1,0 +1,28 @@
+{
+  "repoUrl": "https://github.com/fixture/minimal",
+  "clonedAt": "2026-11-24T17:42:04.524Z",
+  "nodeVersion": "v24.22.1",
+  "packageManager": "npm",
+  "install": {
+    "command": "npm install",
+    "exitCode": 0,
+    "stdout": "up to date",
+    "stderr": "",
+    "durationMs": 50
+  },
+  "build": {
+    "command": "npm install",
+    "exitCode": 0,
+    "stdout": "up to date",
+    "stderr": "",
+    "durationMs": 50
+  },
+  "dependencyIssues": [],
+  "lastCommit": {
+    "sha": "abc123",
+    "date": "2026-11-24T17:42:04.524Z"
+  },
+  "repoAgeMonths": 1,
+  "status": "green",
+  "sandboxPath": "/Users/williamsmalachy/Documents/personal/hackathons/kiroween/necromancer/test/fixtures/minimal-node-app"
+}

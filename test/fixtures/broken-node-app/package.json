@@ -1,0 +1,16 @@
+{
+  "name": "broken-node-app",
+  "version": "1.0.0",
+  "description": "A fixture representing a broken Node.js app",
+  "scripts": {
+    "build": "tsc --noEmit",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "lodash": "1.0.0",
+    "express": "1.0.0"
+  },
+  "devDependencies": {
+    "typescript": "3.0.0"
+  }
+}
